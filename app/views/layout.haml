@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta(http-equiv="Content-Type" content="text/html" charset="utf-8")
+    %title Welcome to Dasher
+    %link(href="/css/blueprint/screen.css" rel="stylesheet" type="text/css" media="screen, projection")
+    %link(href="/css/blueprint/print.css" rel="stylesheet" type="text/css" media="print")
+    
+    /[if IE 8]
+    %link(rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection")
+  
+    %link(rel="stylesheet" href="/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection")
+    %link(rel="stylesheet" href="/css/dasher.css" type="text/css" media="screen,projection")
+    
+  %body
+    .container
+      #header.span-24.last
+        %h1 Twitter Dash
+        
+      = yield
