@@ -1,5 +1,35 @@
 .span-8.tweet-stat
-  %h2
+  %h2= twitter_stats.updates.count
   %div
-    %img { src= }
+    %img{ :src => twitter_stats.updates.sparkline }
   %p Updates
+  
+.span-8.tweet-stat
+  %h2= twitter_stats.followers.count
+  %div
+    %img{ :src => twitter_stats.followers.sparkline }
+  %p Followers
+    
+.span-8.tweet-stat.last
+  %h2= twitter_stats.friends.count
+  %div
+    %img{ :src => twitter_stats.friends.sparkline }
+  %p Friends
+  
+.span-8.tweet-stat
+  %h2= twitter_stats.mentions.count
+  %div
+    %img{ :src => twitter_stats.mentions.sparkline }
+  %p Mentions
+
+.span-8.tweet-stat
+  %h2= twitter_stats.links.count
+  %div
+    %img{ :src => twitter_stats.links.sparkline }
+  %p Links
+
+.span-8.tweet-stat.last
+  %h2= twitter_stats.hashtags.count
+  %div
+    %img{ :src => twitter_stats.hashtags.sparkline }
+  %p Hashtags
