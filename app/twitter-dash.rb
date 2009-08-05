@@ -38,11 +38,9 @@ get '/' do
   haml :index
 end
 
-get '/login' do
-  haml :login
-end
-
-post 'login' do
-  title = params[:username]
-  link = params[:password]
+post '/stats/' do
+  username = params[:username]
+  password = params[:password]
+  session
+  haml :stats, :locals => { :username => params[:username] }
 end
