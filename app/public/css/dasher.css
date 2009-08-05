@@ -3,3 +3,6 @@
 .tweet-stat h2 { font-size: 4em; font-weight: bold; text-align: center; margin-bottom: 0; }
 .tweet-stat p { text-align: center; }
 .tweet-stat div { text-align: center; }
+
+h1 { text-align: center; }
+fieldset { border: 0px; padding: 0;}
