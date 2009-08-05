@@ -1,0 +1,15 @@
+.span-8.prepend-8.append-8.last
+  .notice Login using your Twitter username and password:
+  %br
+  %form{:method => "post", :action => "/login/"}
+    %fieldset
+      %p    
+        %label Username:
+        %br
+        %input.title{:type => "text", :id => "title", :name => "title", :value => ""}
+      %p
+        %label Password:
+        %br
+        %input.title{:type => "password", :id => "link", :name => "link", :value => ""}
+      %p
+        %input{:type => "submit", :value => "Add"}
