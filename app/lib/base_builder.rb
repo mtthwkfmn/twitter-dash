@@ -11,7 +11,7 @@ class BaseBuilder
   end
   
   def sparkline
-    Gchart.sparkline(:data => @sparkline_data,:size => '80x20')
+    Gchart.sparkline(:data => @sparkline_data,:size => '120x40')
   end
   
 end
