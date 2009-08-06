@@ -12,10 +12,10 @@ class StatsAssembler
     @client = connect(username,password)
     
     @tweets = get_tweets(@client)
-    @updates = StatisticBuilder.new(@tweets, @tweets.first.user.statuses_count)
+    @updates = StatisticBuilder.new(@tweets)
     
     @replies = get_mentions(@client)
-    @mentions = StatisticBuilder.new(@replies, @replies.size)
+    @mentions = StatisticBuilder.new(@replies)
     
     @followers = FollowerBuilder.new(@tweets, @tweets.first.user.followers_count)
     @friends = FriendBuilder.new(@tweets, @tweets.first.user.friends_count)

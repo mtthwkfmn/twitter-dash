@@ -9,6 +9,7 @@ class FollowerBuilder < BaseBuilder
     @updates.each do |update|
       day = (Date.today - Date.parse(update.created_at)).to_i
       if day.between?(0,29)
+        # Always use the highest number of followers for each day.
         if update.user.followers_count > @sparkline_data[day]
           @sparkline_data[day] = update.user.followers_count
         end

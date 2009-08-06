@@ -9,12 +9,14 @@ class FriendBuilder < BaseBuilder
     @updates.each do |update|
       day = (Date.today - Date.parse(update.created_at)).to_i
       if day.between?(0,29)
+        # Always use the highest number of friends for each day.
         if update.user.friends_count > @sparkline_data[day]
           @sparkline_data[day] = update.user.friends_count
         end
       end  
     end
     
+    # Skip days we didn't tweet.
     @sparkline_data.delete_if { |x| x == 0 }
     
   end
