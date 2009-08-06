@@ -1,0 +1,18 @@
+== Twitter Dash
+
+Twitter Dash is a simple little Sinatra app that shows you your Twitter activity in the form of sparklines. Currently it measures the following activities:
+
+- Tweets
+- Followers
+- Friends
+- Mentions
+- Links
+- Hashtags
+
+Based on the last 30 days tweets, Twitter Dash will generate little sparklines for each of these activities.
+
+Useful or not, Twitter Dash is really a project about learning Ruby and Sinatra and is not about setting the Internet on fire with another Twitter application.
+
+= Dependencies
+
+Twitter Dash uses the Twitter gem by John Nunemake and the Googlecharts gem by Matt Aimonetti. I'm also using the ActiveSupport gem to get nice things like "30.days.ago".
