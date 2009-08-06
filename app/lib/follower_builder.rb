@@ -3,6 +3,7 @@ class FollowerBuilder < BaseBuilder
   def initialize(updates, count = 0)
     super(updates, count)
     build_sparkline_data
+    @count = updates.first.user.friends_count
   end
   
   def build_sparkline_data
@@ -16,6 +17,7 @@ class FollowerBuilder < BaseBuilder
       end  
     end
     
+    # Skip days we didn't tweet.
     @sparkline_data.delete_if { |x| x == 0 }
     
   end

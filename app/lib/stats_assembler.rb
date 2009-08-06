@@ -17,8 +17,8 @@ class StatsAssembler
     @replies = get_mentions(@client)
     @mentions = StatisticBuilder.new(@replies)
     
-    @followers = FollowerBuilder.new(@tweets, @tweets.first.user.followers_count)
-    @friends = FriendBuilder.new(@tweets, @tweets.first.user.friends_count)
+    @followers = FollowerBuilder.new(@tweets)
+    @friends = FriendBuilder.new(@tweets)
     @links = LinkBuilder.new(@tweets)
     @hashtags = HashtagBuilder.new(@tweets)
     
