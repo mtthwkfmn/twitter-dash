@@ -5,6 +5,8 @@ Dir[File.dirname(__FILE__) + '*.rb'].each {|file| require file }
 
 class StatsAssembler
   
+  attr_reader :updates, :mentions, :followers, :friends, :links, :hashtags
+  
   def initialize(username,password)
     
     @client = connect(username,password)
@@ -21,13 +23,6 @@ class StatsAssembler
     @hashtags = HashtagBuilder.new(@tweets)
     
   end
-  
-  def updates; @updates; end
-  def mentions; @mentions; end
-  def followers; @followers; end
-  def friends; @friends; end
-  def links; @links; end
-  def hashtags; @hashtags; end
   
   private
   
