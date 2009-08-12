@@ -3,7 +3,7 @@ class FriendBuilder < BaseBuilder
   def initialize(updates, count = 0)
     super(updates, count)
     build_sparkline_data
-    @count = updates.first.user.friends_count
+    @count = updates.first.user.friends_count - updates.last.user.friends_count
   end
   
   def build_sparkline_data
