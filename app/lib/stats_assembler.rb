@@ -8,8 +8,13 @@ class StatsAssembler
   attr_reader :updates, :mentions, :followers, :friends, :links, :hashtags
   
   def initialize(username,password)
-    
-    @client = connect(username,password)
+    @username = username
+    @password = password
+  end
+  
+  def connect()
+    httpauth = Twitter::HTTPAuth.new(@username,@password)
+    @client = Twitter::Base.new(httpauth)
     
     @tweets = get_tweets(@client)
     @updates = StatisticBuilder.new(@tweets)
@@ -21,15 +26,9 @@ class StatsAssembler
     @friends = FriendBuilder.new(@tweets)
     @links = LinkBuilder.new(@tweets)
     @hashtags = HashtagBuilder.new(@tweets)
-    
   end
   
   private
-  
-  def connect(username, password)
-    httpauth = Twitter::HTTPAuth.new(username,password)
-    Twitter::Base.new(httpauth)
-  end
   
   def get_tweets(client)
     tweets = client.user_timeline
