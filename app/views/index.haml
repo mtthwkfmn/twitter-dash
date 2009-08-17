@@ -1,5 +1,11 @@
 .span-8.prepend-8.append-8.last
-  .notice Login using your Twitter username and password:
+      
+  .message
+    - if @flash[:error]
+      .error= @flash[:error]
+    - if @flash[:notice]
+      .notice= @flash[:notice]
+
   %br
   %form{:method => "post", :action => "/stats/"}
     %fieldset
