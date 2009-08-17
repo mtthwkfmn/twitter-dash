@@ -13,7 +13,11 @@ get '/' do
 end
 
 post '/stats/' do
-  @twitter_stats = StatsAssembler.new(params[:username],params[:password])
-  @twitter_stats.connect()
-  haml :stats, :locals => { :twitter_stats => @twitter_stats }
+  begin
+    @twitter_stats = StatsAssembler.new(params[:username],params[:password])
+    @twitter_stats.connect()
+    haml :stats, :locals => { :twitter_stats => @twitter_stats }
+  rescue Twitter::Unauthorized
+    redirect '/'
+  end
 end
