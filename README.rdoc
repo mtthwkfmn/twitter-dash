@@ -15,4 +15,4 @@ Useful or not, Twitter Dash is really a project about learning Ruby and Sinatra 
 
 = Dependencies
 
-Twitter Dash uses the Twitter gem by John Nunemake and the Googlecharts gem by Matt Aimonetti. I'm also using the ActiveSupport gem to get nice things like "30.days.ago".
+Twitter Dash uses the Twitter[http://github.com/jnunemaker/twitter/tree/master] gem by John Nunemaker and the Googlecharts[http://github.com/mattetti/googlecharts/tree/master] gem by Matt Aimonetti. I'm also using the ActiveSupport gem to get nice things like "30.days.ago".
